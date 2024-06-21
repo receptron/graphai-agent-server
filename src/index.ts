@@ -7,7 +7,7 @@ import * as serviceAgents from "@graphai/service_agents";
 
 import { agentDispatcher, agentsList, agentDoc } from "@receptron/graphai_express";
 
-import { allowedOrigins, hostName, agentPath } from "./config";
+import { port, allowedOrigins, hostName, agentPath } from "./config";
 
 export const app = express();
 
@@ -30,7 +30,6 @@ const agents = {...llmAgents, ...serviceAgents};
 app.get(agentPath, agentsList(agents, hostName, agentPath));
 app.post(agentPath + "/:agentId", agentDispatcher(agents));
 
-const port = 8085;
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
