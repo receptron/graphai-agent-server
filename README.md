@@ -8,6 +8,16 @@ Agent Server for GraphAI
 yarn run install
 ```
 
+### run server
+Before run, set openai and other keys
+
+.env
+```
+OPENAI_API_KEY=sk-xxxx
+XXX_API_KEY=xxx
+```
+
+
 # Run
 
 ```
