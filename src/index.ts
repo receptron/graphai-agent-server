@@ -27,9 +27,15 @@ app.use(
 );
 app.use(cors(options));
 
+const myLogger = function (req: express.Request, res: express.Response, next: express.NextFunction) {
+  console.log(req.params)
+  console.log(req.body.namedInputs)
+  next()
+}
+
 const agents = { ...llmAgents, ...serviceAgents, ...sampleAgent, ...vanillaAgents };
 app.get(agentPath, agentsList(agents, hostName, agentPath));
-app.post(agentPath + "/:agentId", agentDispatcher(agents));
+app.post(agentPath + "/:agentId", myLogger, agentDispatcher(agents));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
