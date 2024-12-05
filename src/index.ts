@@ -7,7 +7,7 @@ import * as serviceAgents from "@graphai/service_agents";
 import * as vanillaAgents from "@graphai/vanilla";
 import * as sampleAgent from "./sample_agent";
 
-import { agentDispatcher, agentsList, agentDoc } from "@receptron/graphai_express";
+import { agentDispatcher, agentsList } from "@receptron/graphai_express";
 
 import { port, allowedOrigins, hostName, agentPath } from "./config";
 
@@ -27,9 +27,14 @@ app.use(
 );
 app.use(cors(options));
 
+const logger = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.log(req.params.agentId);
+  next();
+};
+
 const agents = { ...llmAgents, ...serviceAgents, ...sampleAgent, ...vanillaAgents };
 app.get(agentPath, agentsList(agents, hostName, agentPath));
-app.post(agentPath + "/:agentId", agentDispatcher(agents));
+app.post(agentPath + "/:agentId", logger, agentDispatcher(agents));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
