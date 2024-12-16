@@ -1,6 +1,6 @@
 {
   "name": "graphai-agent-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "@graphai/llm_agents": "^0.2.1",
     "@graphai/service_agents": "^0.2.0",
     "@graphai/vanilla": "^0.2.6",
-    "@receptron/graphai_express": "^0.1.0",
+    "@receptron/graphai_express": "^0.1.2",
     "cors": "^2.8.5",
     "express": "^4.21.2"
   },
