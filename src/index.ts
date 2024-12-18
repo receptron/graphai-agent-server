@@ -43,7 +43,6 @@ Object.values(agents).map((agent) => {
     });
   }
 });
->>>>>>> main
 app.get(agentPath, agentsList(agents, hostName, agentPath));
 app.post(agentPath + "/:agentId", logger, agentDispatcher(agents));
 
