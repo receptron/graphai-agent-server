@@ -33,6 +33,15 @@ const logger = async (req: express.Request, res: express.Response, next: express
 };
 
 const agents = { ...llmAgents, ...serviceAgents, ...sampleAgent, ...vanillaAgents };
+
+Object.values(agents).map((agent) => {
+  if (agent.environmentVariables) {
+    agent.environmentVariables.map((envVal) => {
+      const hit = !!process.env[envVal];
+      console.log(`${envVal} ` + (hit ? "ok" : "DOES NOT EXIST!! Set this environment variable!!"));
+    });
+  }
+});
 app.get(agentPath, agentsList(agents, hostName, agentPath));
 app.post(agentPath + "/:agentId", logger, agentDispatcher(agents));
 
