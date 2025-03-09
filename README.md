@@ -5,7 +5,7 @@ Agent Server for GraphAI
 # Install
 
 ```
-yarn run install
+yarn install
 ```
 
 ### run server
@@ -27,4 +27,3 @@ yarn run server
 # config
 
 in src/config.ts
-
