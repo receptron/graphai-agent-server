@@ -4,7 +4,7 @@ const sampleAgent: AgentFunction = async ({ params, namedInputs }) => {
   return { params, namedInputs };
 };
 
-const sampleInput = [{ message: "hello" }, { message: "test" }];
+const sampleInput = { array: [{ message: "hello" }, { message: "test" }] };
 const sampleParams = { sample: "123" };
 const sampleResult = { inputs: sampleInput, params: sampleParams };
 
@@ -22,7 +22,7 @@ const sampleAgentInfo: AgentFunctionInfo = {
   description: "Sample agent",
   author: "isamu arimoto",
   category: ["LLM"],
-  repository: "https://github.com/isamu/graphai_doc",
+  repository: "https://github.com/receptron/graphai-agent-server",
   license: "MIT",
 };
 

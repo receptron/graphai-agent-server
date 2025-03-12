@@ -7,9 +7,11 @@ import * as serviceAgents from "@graphai/service_agents";
 import * as vanillaAgents from "@graphai/vanilla";
 import * as sampleAgent from "./sample_agent";
 
-import { agentDispatcher, agentsList } from "@receptron/graphai_express";
+import { agentDispatcher, agentsList, updateAgentVerbose } from "@receptron/graphai_express";
 
 import { port, allowedOrigins, hostName, agentPath } from "./config";
+
+updateAgentVerbose(true);
 
 export const app = express();
 
@@ -36,14 +38,15 @@ const agents = { ...llmAgents, ...serviceAgents, ...sampleAgent, ...vanillaAgent
 
 Object.values(agents).map((agent) => {
   if (agent.environmentVariables) {
-    agent.environmentVariables.map((envVal) => {
+    agent.environmentVariables.map((envVal: string) => {
       const hit = !!process.env[envVal];
       console.log(`${envVal} ` + (hit ? "ok" : "DOES NOT EXIST!! Set this environment variable!!"));
     });
   }
 });
+
 app.get(agentPath, agentsList(agents, hostName, agentPath));
-app.post(agentPath + "/:agentId", logger, agentDispatcher(agents));
+app.post(agentPath + "/:agentId", logger, agentDispatcher(agents, []));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
