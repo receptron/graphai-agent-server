@@ -13,13 +13,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@graphai/llm_agents": "^1.0.2",
-    "@graphai/service_agents": "^1.0.1",
-    "@graphai/vanilla": "^1.0.9",
-    "@receptron/graphai_express": "^1.0.0",
+    "@graphai/llm_agents": "^2.0.2",
+    "@graphai/service_agents": "^2.0.1",
+    "@graphai/vanilla": "^2.0.6",
+    "@receptron/graphai_express": "^3.0.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "graphai": "^1.0.1"
+    "graphai": "^2.0.13"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
