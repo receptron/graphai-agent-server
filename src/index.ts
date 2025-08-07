@@ -5,7 +5,7 @@ import cors from "cors";
 import * as llmAgents from "@graphai/llm_agents";
 import * as serviceAgents from "@graphai/service_agents";
 import * as vanillaAgents from "@graphai/vanilla";
-import * as sampleAgent from "./sample_agent";
+import sampleAgent from "./sample_agent";
 
 import { agentDispatcher, agentsList, updateAgentVerbose } from "@receptron/graphai_express";
 
@@ -34,7 +34,7 @@ const logger = async (req: express.Request, res: express.Response, next: express
   next();
 };
 
-const agents = { ...llmAgents, ...serviceAgents, ...sampleAgent, ...vanillaAgents };
+const agents = { ...llmAgents, ...serviceAgents, sampleAgent, ...vanillaAgents };
 
 Object.values(agents).map((agent) => {
   if (agent.environmentVariables) {
