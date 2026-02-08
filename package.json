@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint ./src",
+    "lint": "eslint ./src",
     "format": "prettier --write 'src/*.ts' .eslintrc.js",
     "server": "ts-node src/index.ts",
     "test_stream_agent": "npx ts-node -r tsconfig-paths/register tests/test_stream_client.ts",
