@@ -19,7 +19,7 @@
     "@receptron/graphai_express": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "graphai": "^2.0.13"
+    "graphai": "^2.0.18"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -32,9 +32,9 @@
     "eslint": "^10.6.0",
     "eslint-plugin-import": "^2.32.0",
     "globals": "^17.7.0",
-    "prettier": "^3.8.5",
+    "prettier": "^3.9.1",
     "ts-node": "^10.9.2",
-    "tsc-alias": "^1.8.16",
+    "tsc-alias": "^1.8.17",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.0"
