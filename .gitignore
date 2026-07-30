@@ -131,3 +131,6 @@ dist
 
 # emacs
 *~
+
+# TypeScript build output (tsconfig outDir)
+/lib/

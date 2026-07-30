@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./src",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
     "format": "prettier --write src/*.ts .eslintrc.js",
     "server": "ts-node src/index.ts",
     "test_stream_agent": "npx ts-node -r tsconfig-paths/register tests/test_stream_client.ts",
@@ -13,30 +15,29 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@graphai/llm_agents": "^2.0.2",
+    "@graphai/llm_agents": "^2.0.14",
     "@graphai/service_agents": "^2.0.1",
-    "@graphai/vanilla": "^2.0.6",
+    "@graphai/vanilla": "^2.0.12",
     "@receptron/graphai_express": "^3.0.2",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
     "graphai": "^2.0.18"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.3",
-    "@types/node": "^26.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.62.0",
-    "@typescript-eslint/parser": "^8.62.0",
-    "dotenv": "^17.2.4",
-    "eslint": "^10.6.0",
-    "eslint-plugin-import": "^2.32.0",
-    "globals": "^17.7.0",
-    "prettier": "^3.9.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.65.0",
+    "@typescript-eslint/parser": "^8.65.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.8.0",
+    "globals": "^17.8.0",
+    "prettier": "^3.9.6",
     "ts-node": "^10.9.2",
-    "tsc-alias": "^1.8.17",
+    "tsc-alias": "^1.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.0"
+    "typescript-eslint": "^8.65.0"
   }
 }
