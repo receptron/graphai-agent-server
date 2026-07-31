@@ -134,3 +134,6 @@ dist
 
 # TypeScript build output (tsconfig outDir)
 /lib/
+
+# jscpd duplication-scan output
+report/
